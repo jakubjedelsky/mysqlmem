@@ -1,0 +1,19 @@
+How much memory can my MySQL server eat?
+
+Licensed under GPLv2+
+
+It's based on maximum memory usage of mysql server:
+
+Mysql_max_memory_usage =
+       Query_cache_size      +   Key_buffer_size         +
+       Myisam_sort_buffer_size   +   Innodb_buffer_pool_size     +
+       Innodb_log_buffer_size    +   Innodb_additional_mem_pool_size +
+       Max_connections       *
+       (
+           Sort_buffer_size        +   Read_buffer_size        +
+           Read_rnd_buffer_size    +   Join_buffer_size        +
+           Thread_stack
+       )
+Much more info about perfromance you cau get with mysqltuner:
+   http://mysqltuner.com/mysqltuner.pl
+
